@@ -1,8 +1,13 @@
+# Schnapsidee
 
-# [Deployed Version](https://german-steve-sean.herokuapp.com/)
+<img src="./screenshot.jpg" width="500px"/>
+
+### [Deployed Version](https://german-steve-sean.herokuapp.com/)
 The server is in a seperate repo that can be found [Here](https://github.com/thinkful-ei26/spaced-repitition-steve-sean-SERVER)
 
 ### Description
+#### Summary
+This app uses a spaced repetition algorithm to teach German. The algorithm makes words a user gets correct appear less frequently than those the user gets wrong.
 #### Tech Stack
 The backend for this app uses NodeJS with express.  Authenitcation is handled using JWTs with passport.  BcryptJS is used to hash passwords.
 The database is a mongo database.  It's hosted on [mLab](https://mlab.com/).
@@ -15,3 +20,6 @@ On the backend, index.js is the main file.  The rest is divided into directories
 Auth contains the local and jwt strategies as well as a router with login and refresh endpoints.
 Users contains our user model, which has methods to hash and validate passwords using bcrypt.  Registration is handled in the users router.
 Words just has a router.  This is where the get word, get progress, and answer question endpoints are.  The answer question endpoint has our spaced repetition algorithm.
+#### API
+Most of the work is done in the words router on the server. The put endpoint is where the spaced repetition algorithm is implemented, and the two get endpoints simply respond with the user's next word or progress.
+Users handles creating a new user and auth handles logins.
